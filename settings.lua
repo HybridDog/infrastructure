@@ -25,11 +25,11 @@
 
 -- Automatic warning device
 	AUTOMATIC_WARNING_DEVICE_LIGHT_RANGE = 12	-- an integer		-> default = 12		| How much light do you want it to give?
-	AUTOMATIC_WARNING_DEVICE_VOLUME = 0		-- a float		-> default = 0.5	| How noisy should be the bell sound?
+	AUTOMATIC_WARNING_DEVICE_VOLUME = 0.75		-- a float		-> default = 0.5	| How noisy should be the bell sound?
 
 -- Boom barrier
 	BOOM_BARRIER_LIGHT_RANGE = 6			-- an integer		-> default = 6		| How much light do you want it to give?
-	BOOM_BARRIER_VOLUME = 0			-- a float		-> default = 0.1	| How noisy should be the mechanism sound?
+	BOOM_BARRIER_VOLUME = 0.4			-- a float		-> default = 0.1	| How noisy should be the mechanism sound?
 
 -- Curve chevron
 	CURVE_CHEVRON_LIGHT_RANGE = 12			-- an integer		-> default = 12		| How much light do you want it to give?
