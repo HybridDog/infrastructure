@@ -1,4 +1,20 @@
 -- Automatic warning device
+local sound_handles = {}
+local function play_bell(pos)
+	local pos_hash = minetest.hash_node_position(pos)
+	sound_handles[pos_hash] = minetest.sound_play("infrastructure_ebell",
+			{pos = pos, gain = AUTOMATIC_WARNING_DEVICE_VOLUME, loop = true, max_hear_distance = 50,})
+
+end
+
+local function stop_bell(pos, node)
+	local pos_hash = minetest.hash_node_position(pos)
+	local sound_handle = sound_handles[pos_hash]
+	if sound_handle then
+		minetest.sound_stop(sound_handle)
+		sound_handles[pos_hash] = nil
+	end
+end
 	function left_light_direction(pos, param2)
 		if param2 == 0 then
 			pos.x = pos.x - 1
@@ -55,8 +71,10 @@
 		pos.y = pos.y + 2
 		local node = minetest.env:get_node(pos)
 		if node.name == "infrastructure:automatic_warning_device_middle_center_1" then
+			play_bell(pos)
 			minetest.swap_node(pos, {name = "infrastructure:automatic_warning_device_middle_center_2", param2 = node.param2})
 		elseif (node.name == "infrastructure:automatic_warning_device_middle_center_2" or node.name == "infrastructure:automatic_warning_device_middle_center_3") then
+			stop_bell(pos,node)
 			lights_disabled(pos, node)
 		end
 	end
@@ -66,14 +84,8 @@
 		interval = 1,
 		chance = 1,
 		action = function(pos, node)
-			lights_enabled(pos, node)
-			pos.y = pos.y + 1
-			minetest.sound_play("infrastructure_automatic_warning_device", {
-					pos = pos,
-					gain = AUTOMATIC_WARNING_DEVICE_VOLUME,
-					max_hear_distance = 50
-			})
-		end
+				lights_enabled(pos,node)
+			end
 	})
 
 		minetest.register_node("infrastructure:automatic_warning_device_top", {
@@ -85,6 +97,7 @@
 				"infrastructure_automatic_warning_device_top_side.png",
 				"infrastructure_automatic_warning_device_top.png"
 			},
+			on_destruct = stop_bell,
 			drawtype = "nodebox",
 			paramtype = "light",
 			paramtype2 = "facedir",
