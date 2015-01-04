@@ -3,7 +3,7 @@ local sound_handles = {}
 local function play_bell(pos)
 	local pos_hash = minetest.hash_node_position(pos)
 	sound_handles[pos_hash] = minetest.sound_play("infrastructure_ebell",
-			{pos = pos, gain = AUTOMATIC_WARNING_DEVICE_VOLUME, loop = true, max_hear_distance = 50,})
+			{pos = pos, gain = AUTOMATIC_WARNING_DEVICE_VOLUME, loop = true, max_hear_distance = 30,})
 
 end
 
