@@ -1,12 +1,7 @@
 -- **************************************************************************************************** MATERIALS
 
 -- Galvanized steel
-	minetest.register_craft({
-		type = "cooking",
-		output = '"infrastructure:galvanized_steel" 1',
-		recipe = "default:steel_ingot",
-		cooktime = 2
-	})
+	technic.register_alloy_recipe({input = {"default:steel_ingot 6", "technic:zinc_ingot 1"}, output = "infrastructure:galvanized_steel 6", time = 4})
 
 -- Galvanized steel fence
 	minetest.register_craft({
