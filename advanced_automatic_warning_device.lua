@@ -317,6 +317,9 @@ end
 				local node = minetest.env:get_node(pos)
 				local param2 = node.param2
 
+				local meta = minetest.get_meta(pos)
+				meta:set_string("formspec", "field[channel;Channel;${channel}]")
+
 				pos.y = pos.y + 1
 				node.name = "infrastructure:automatic_warning_device_middle"
 				minetest.env:add_node(pos, node)
@@ -363,12 +366,45 @@ end
 				activate_lights(pos, node)
 			end,
 
-			mesecons = {effector = {
-				action_on = function(pos, node)
-					activate_lights(pos, node)
-				end,
-			}}
+			on_receive_fields = function(pos, formname, fields, sender)
+				if (fields.channel) then
+					minetest.get_meta(pos):set_string("channel", fields.channel)
+					minetest.get_meta(pos):set_string("state", "Off")
+				end
+			end,
+
+			digiline = {
+				receptor = {},
+				effector = {
+					action = function(pos, node, channel, msg)
+						local setchan = minetest.get_meta(pos):get_string("channel")
+						if setchan ~= channel then
+							return
+						end
+						if (msg=="bell_on") then
+							play_bell(pos)
+						elseif (msg=="bell_off") then
+							stop_bell(pos,node)
+						elseif (msg=="lights_on") then
+							pos.y = pos.y + 2
+							local node = minetest.env:get_node(pos)
+							if node.name == "infrastructure:automatic_warning_device_middle_center_1" then
+								minetest.swap_node(pos, {name = "infrastructure:automatic_warning_device_middle_center_2", param2 = node.param2})
+							end
+						elseif (msg=="lights_off") then	
+							pos.y = pos.y + 2
+							local node = minetest.env:get_node(pos)
+							if (node.name == "infrastructure:automatic_warning_device_middle_center_2" or node.name == "infrastructure:automatic_warning_device_middle_center_3") then
+								lights_disabled(pos, node)
+							end
+						end
+					end
+				}
+			}
 		})
+
+
+
 
 	minetest.register_alias("infrastructure:automatic_warning_device", "infrastructure:automatic_warning_device_bottom")
 	minetest.register_alias("awd", "infrastructure:automatic_warning_device_bottom")

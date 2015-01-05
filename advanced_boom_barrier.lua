@@ -339,12 +339,34 @@
 			minetest.env:remove_node(pos)
 		end,
 
-		mesecons = {effector = {
-			action_on = function(pos, node)
-				pos.y = pos.y + 1
-				move_arm(pos, node)
-			end,
-		}}
+		on_construct = function(pos)
+			local meta = minetest.get_meta(pos)
+			meta:set_string("formspec", "field[channel;Channel;${channel}]")
+		end,
+
+		on_receive_fields = function(pos, formname, fields, sender)
+			if (fields.channel) then
+				minetest.get_meta(pos):set_string("channel", fields.channel)
+				minetest.get_meta(pos):set_string("state", "Off")
+			end
+		end,
+
+		digiline = {
+			receptor = {},
+			effector = {
+				action = function(pos, node, channel, msg)
+					local setchan = minetest.get_meta(pos):get_string("channel")
+					if setchan ~= channel then
+						return
+					end
+					pos.y = pos.y + 1
+					local mechnode = minetest.env:get_node(pos)
+					if ((msg == "up" and mechnode.name=="infrastructure:boom_barrier_top_h") or (msg == "down" and mechnode.name=="infrastructure:boom_barrier_top_v")) then
+						move_arm(pos, mechnode)
+					end
+				end
+			}
+		},
 	})
 
 	minetest.register_node("infrastructure:boom_barrier_arm_h_bright", {
