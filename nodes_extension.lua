@@ -29,7 +29,7 @@
 	register_stair_slab_panel_micro("infrastructure", "asphalt_center_solid_one_side", "infrastructure:asphalt_center_solid_one_side",
 			{not_in_creative_inventory=NOT_IN_CREATIVE_INVENTORY, cracky=1},
 			{
-				"streets_asphalt.png^infrastructure_single_yellow_line_one_side.png",
+				"streets_asphalt.png^infrastructure_solid_yellow_line_one_side.png",
 				"streets_asphalt.png",
 				"streets_asphalt.png",
 				"streets_asphalt.png",
