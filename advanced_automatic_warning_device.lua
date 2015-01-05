@@ -341,6 +341,9 @@ end
 			on_destruct = function(pos)
 				local node = minetest.env:get_node(pos)
 				local param2 = node.param2
+				pos.y=pos.y+2
+				stop_bell(pos, node)
+				pos.y=pos.y-2
 
 				for i = 1, 3 do
 					pos.y = pos.y + 1
