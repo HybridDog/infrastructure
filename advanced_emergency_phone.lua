@@ -76,8 +76,7 @@
 			drawtype = "nodebox",
 			paramtype = "light",
 			paramtype2 = "facedir",
-			groups = {cracky=1},
-			drop = "infrastructure:emergency_phone_top",
+			groups = {not_in_creative_inventory=1},
 			node_box = {
 				type = "fixed",
 				fixed = {-0.25, -0.5, -0.25, 0.25, 0.5, 0.25}
