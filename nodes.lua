@@ -270,12 +270,13 @@
 		},
 
 		after_place_node = function(pos)
-			local param2 = node.param2
 			pos.y = pos.y - 1
 			local node = minetest.env:get_node(pos)
 			if (node.name == "default:dirt_with_grass") then
 				pos.y = pos.y + 1
-				mesecon:swap_node(pos, "infrastructure:precast_concrete_grid_paver_with_grass")
+				local node = minetest.env:get_node(pos)
+				node.name = "infrastructure:precast_concrete_grid_paver_with_grass"
+				minetest.env:swap_node(pos, node)
 			end
 		end
 	})
@@ -331,7 +332,9 @@
 		},
 
 		on_punch = function(pos, node)
-			mesecon:swap_node(pos, "infrastructure:precast_concrete_grid_paver")
+			local node = minetest.env:get_node(pos)
+			node.name = "infrastructure:precast_concrete_grid_paver"
+			minetest.env:swap_node(pos, node)
 		end
 	})
 
