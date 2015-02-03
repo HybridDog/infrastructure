@@ -155,9 +155,9 @@
 	minetest.register_craft({
 		output = '"infrastructure:truss" 5',
 		recipe = {
-			{'default:steel_ingot', '', 'default:steel_ingot'},
-			{'', 'default:steel_ingot', ''},
-			{'default:steel_ingot', '', 'default:steel_ingot'}
+			{'infrastructure:galvanized_steel', '', 'infrastructure:galvanized_steel'},
+			{'', 'infrastructure:galvanized_steel', ''},
+			{'infrastructure:galvanized_steel', '', 'infrastructure:galvanized_steel'}
 		}
 	})
 
@@ -165,9 +165,9 @@
 	minetest.register_craft({
 		output = '"infrastructure:wire_netting" 10',
 		recipe = {
-			{'', 'default:steel_ingot', ''},
-			{'default:steel_ingot', '', 'default:steel_ingot'},
-			{'', 'default:steel_ingot', ''}
+			{'', 'infrastructure:galvanized_steel', ''},
+			{'infrastructure:galvanized_steel', '', 'infrastructure:galvanized_steel'},
+			{'', 'infrastructure:galvanized_steel', ''}
 		}
 	})
 
@@ -175,9 +175,9 @@
 	minetest.register_craft({
 		output = '"infrastructure:razor_wire" 5',
 		recipe = {
-			{'default:steel_ingot'},
+			{'infrastructure:galvanized_steel'},
 			{'default:cactus'},
-			{'default:steel_ingot'}
+			{'infrastructure:galvanized_steel'}
 		}
 	})
 
@@ -185,7 +185,7 @@
 	minetest.register_craft({
 		output = '"infrastructure:drainage_channel_grating" 2',
 		recipe = {
-			{'default:steel_ingot', '', 'default:steel_ingot'}
+			{'infrastructure:galvanized_steel', '', 'infrastructure:galvanized_steel'}
 		}
 	})
 
@@ -193,9 +193,9 @@
 	minetest.register_craft({
 		output = '"infrastructure:drainage_channel_grating" 2',
 		recipe = {
-			{'default:steel_ingot'},
+			{'infrastructure:galvanized_steel'},
 			{''},
-			{'default:steel_ingot'}
+			{'infrastructure:galvanized_steel'}
 		}
 	})
 
