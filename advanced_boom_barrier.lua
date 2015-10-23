@@ -146,7 +146,7 @@
 
 	minetest.register_node("infrastructure:boom_barrier_top_h", {
 		description = "Boom barrier mechanism",
-		tile_images = {
+		tiles = {
 			"infrastructure_boom_barrier_h_top.png",
 			"infrastructure_boom_barrier_h_bottom.png",
 			"infrastructure_boom_barrier_h_right.png",
@@ -228,7 +228,7 @@
 	})
 
 	minetest.register_node("infrastructure:boom_barrier_top_v", {
-		tile_images = {
+		tiles = {
 			"infrastructure_boom_barrier_h_front_back.png",
 			"infrastructure_boom_barrier_v_bottom.png",
 			"infrastructure_boom_barrier_v_right.png",
@@ -302,7 +302,7 @@
 	})
 
 	minetest.register_node("infrastructure:boom_barrier_bottom", {
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_automatic_warning_device_bottom.png",
@@ -371,7 +371,7 @@
 
 	minetest.register_node("infrastructure:boom_barrier_arm_h_bright", {
 		description = "Boom barrier arm",
-		tile_images = {
+		tiles = {
 			"infrastructure_boom_barrier_arm_h_top.png",
 			"infrastructure_boom_barrier_arm_h_bottom_front_back.png",
 			"infrastructure_boom_barrier_arm_h_left_right_bright.png",
@@ -403,7 +403,7 @@
 	})
 
 	minetest.register_node("infrastructure:boom_barrier_arm_h_dark", {
-		tile_images = {
+		tiles = {
 			"infrastructure_boom_barrier_arm_h_top.png",
 			"infrastructure_boom_barrier_arm_h_bottom_front_back.png",
 			"infrastructure_boom_barrier_arm_h_left_right_dark.png",
@@ -435,7 +435,7 @@
 	})
 
 	minetest.register_node("infrastructure:boom_barrier_arm_v", {
-		tile_images = {
+		tiles = {
 			"infrastructure_boom_barrier_arm_h_bottom_front_back.png",
 			"infrastructure_boom_barrier_arm_h_bottom_front_back.png",
 			"infrastructure_boom_barrier_arm_v_left.png",

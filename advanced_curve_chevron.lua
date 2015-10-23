@@ -1,7 +1,7 @@
 -- Curve chevron
 	minetest.register_node("infrastructure:curve_chevron_dark", {
 		description = "Flashing curve chevron",
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
@@ -41,7 +41,7 @@
 	})
 
 	minetest.register_node("infrastructure:curve_chevron_bright", {
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",

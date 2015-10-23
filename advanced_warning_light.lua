@@ -15,7 +15,7 @@
 
 	minetest.register_node("infrastructure:warning_light_bright", {
 		description = "Warning light",
-		tile_images = {
+		tiles = {
 			"infrastructure_warning_light_top.png",
 			"infrastructure_warning_light_bottom.png",
 			"infrastructure_warning_light_right.png",
@@ -55,7 +55,7 @@
 	})
 
 	minetest.register_node("infrastructure:warning_light_dark", {
-		tile_images = {
+		tiles = {
 			"infrastructure_warning_light_top.png",
 			"infrastructure_warning_light_bottom.png",
 			"infrastructure_warning_light_right.png",

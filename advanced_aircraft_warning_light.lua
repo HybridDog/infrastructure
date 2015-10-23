@@ -15,7 +15,7 @@
 
 	minetest.register_node("infrastructure:aircraft_warning_light_bright", {
 		description = "Aircraft warning light",
-		tile_images = {
+		tiles = {
 			"infrastructure_aircraft_warning_light_top_bright.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_aircraft_warning_light_side_bright.png",
@@ -66,7 +66,7 @@
 	})
 
 	minetest.register_node("infrastructure:aircraft_warning_light_dark", {
-		tile_images = {
+		tiles = {
 			"infrastructure_aircraft_warning_light_top_dark.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_aircraft_warning_light_side_dark.png",
