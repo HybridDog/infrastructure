@@ -24,7 +24,7 @@
 
 		minetest.register_node("infrastructure:lane_control_lights_"..tostring(i), {
 			description = "Lane control lights",
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",

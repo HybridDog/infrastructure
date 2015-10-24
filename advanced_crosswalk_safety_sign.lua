@@ -1,6 +1,6 @@
 -- Crosswalk safety sign
 	minetest.register_node("infrastructure:crosswalk_safety_sign_top", {
-		tile_images = {
+		tiles = {
 			"infrastructure_crosswalk_safety_sign_top.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_crosswalk_safety_sign_top_side.png",
@@ -31,7 +31,7 @@
 		description = "Crosswalk safety sign",
 		inventory_image = "infrastructure_crosswalk_safety_sign.png",
 		wield_image = "infrastructure_crosswalk_safety_sign.png",
-		tile_images = {
+		tiles = {
 			"infrastructure_crosswalk_safety_sign_top.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_crosswalk_safety_sign_bottom_side.png",

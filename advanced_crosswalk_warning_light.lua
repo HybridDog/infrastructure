@@ -26,7 +26,7 @@
 		description = "Crosswalk warning light",
 		inventory_image = "infrastructure_crosswalk_warning_light_front_bright.png",
 		wield_image = "infrastructure_crosswalk_warning_light_front_bright.png",
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
@@ -80,7 +80,7 @@
 	})
 
 	minetest.register_node("infrastructure:crosswalk_warning_light_dark", {
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
@@ -135,7 +135,7 @@
 	})
 
 	minetest.register_node("infrastructure:crosswalk_warning_light_bright", {
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",

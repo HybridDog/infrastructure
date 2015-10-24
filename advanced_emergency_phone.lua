@@ -2,7 +2,7 @@
 	if ENABLE_EMERGENCY_PHONE then
 		minetest.register_node("infrastructure:emergency_phone_top", {
 			description = "Emergency phone",
-			tile_images = {
+			tiles = {
 				"infrastructure_emergency_phone_top.png",
 				"infrastructure_emergency_phone_bottom.png",
 				"infrastructure_emergency_phone_side.png",
@@ -72,7 +72,7 @@
 		})
 
 		minetest.register_node("infrastructure:emergency_phone_bottom", {
-			tile_images = {"infrastructure_emergency_phone_bottom.png"},
+			tiles = {"infrastructure_emergency_phone_bottom.png"},
 			drawtype = "nodebox",
 			paramtype = "light",
 			paramtype2 = "facedir",

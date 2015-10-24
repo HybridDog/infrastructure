@@ -4,7 +4,7 @@
 	for i, sign_name in ipairs(signs) do
 		minetest.register_node("infrastructure:road_sign_"..sign_name, {
 			description = "Road sign "..sign_name,
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
@@ -55,7 +55,7 @@
 		})
 
 		minetest.register_node("infrastructure:road_sign_"..sign_name.."_on_post", {
-			tile_images = {
+			tiles = {
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
 				"infrastructure_traffic_lights_side.png",
@@ -90,7 +90,7 @@
 -- Road sign crosswalk
 	minetest.register_node("infrastructure:road_sign_crosswalk", {
 		description = "Road sign crosswalk",
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
@@ -155,7 +155,7 @@
 
 	minetest.register_node("infrastructure:road_sign_crosswalk_on_post", {
 		description = "Road sign crosswalk",
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
@@ -187,7 +187,7 @@
 	})
 
 	minetest.register_node("infrastructure:road_sign_retroreflective_surface", {
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
@@ -212,7 +212,7 @@
 	})
 
 	minetest.register_node("infrastructure:road_sign_retroreflective_surface_on_post", {
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_traffic_lights_side.png",

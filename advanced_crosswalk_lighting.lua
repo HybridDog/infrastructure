@@ -1,7 +1,7 @@
 -- Crosswalk lighting
 	minetest.register_node("infrastructure:crosswalk_lighting_dark", {
 		description = "Crosswalk lighting",
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_crosswalk_lighting_bottom.png",
 			"infrastructure_traffic_lights_side.png",
@@ -41,7 +41,7 @@
 	})
 
 	minetest.register_node("infrastructure:crosswalk_lighting_bright", {
-		tile_images = {
+		tiles = {
 			"infrastructure_traffic_lights_side.png",
 			"infrastructure_crosswalk_lighting_bottom.png",
 			"infrastructure_traffic_lights_side.png",
