@@ -1,7 +1,18 @@
 -- **************************************************************************************************** MATERIALS
 
 -- Galvanized steel
-	technic.register_alloy_recipe({input = {"default:steel_ingot 6", "technic:zinc_ingot 1"}, output = "infrastructure:galvanized_steel 6", time = 4})
+	if minetest.get_modpath("technic") then
+		technic.register_alloy_recipe({input = {"default:steel_ingot 6", "technic:zinc_ingot 1"}, output = "infrastructure:galvanized_steel 6", time = 4})
+	else
+		minetest.register_craft({
+			output = '"infrastructure:galvanized_steel" 6',
+			recipe = {
+				{'', 'default:copper_ingot', ''},
+				{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
+				{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'}
+			}
+		})
+	end
 
 -- Galvanized steel fence
 	minetest.register_craft({
