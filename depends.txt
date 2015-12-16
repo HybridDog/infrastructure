@@ -2,7 +2,6 @@ default
 moreblocks
 mesecons
 wool
-technic
 streetsmod
 prefab
 digilines
