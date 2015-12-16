@@ -1,7 +1,7 @@
 -- **************************************************************************************************** MATERIALS
 
 -- Galvanized steel
-	if technic ~= nil and technic.register_alloy_recipe ~= nil then
+	if minetest.get_modpath("technic") then
 		technic.register_alloy_recipe({input = {"default:steel_ingot 6", "technic:zinc_ingot 1"}, output = "infrastructure:galvanized_steel 6", time = 4})
 	else
 		minetest.register_craft({
