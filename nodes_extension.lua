@@ -36,7 +36,7 @@
 				"streets_asphalt.png",
 				"streets_asphalt.png"
 			},
-			"Asphalt with center solid dashed line",
+			"Asphalt with center solid line on one side",
 			"asphalt_center_solid_dashed",
 			0)
 
