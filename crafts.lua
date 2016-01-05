@@ -37,7 +37,7 @@
 
 -- Asphalt block with center solid line
 	minetest.register_craft({
-		output = '"infrastructure:asphalt_center_solid" 9',
+		output = '"infrastructure:asphalt_center_solid_line" 9',
 		recipe = {
 			{'infrastructure:asphalt', 'wool:yellow', 'infrastructure:asphalt'},
 			{'infrastructure:asphalt', 'wool:yellow', 'infrastructure:asphalt'},
@@ -45,15 +45,16 @@
 		}
 	})
 
--- Asphalt block with center solid dashed line
+-- Asphalt block with center solid line on one side
 	minetest.register_craft({
-		output = '"infrastructure:asphalt_center_solid_dashed" 9',
+		output = '"infrastructure:asphalt_center_solid_one_side" 9',
 		recipe = {
-			{'wool:yellow', 'infrastructure:asphalt', 'wool:yellow'},
 			{'wool:yellow', 'infrastructure:asphalt', 'infrastructure:asphalt'},
-			{'wool:yellow', 'infrastructure:asphalt', 'wool:yellow'}
+			{'wool:yellow', 'infrastructure:asphalt', 'infrastructure:asphalt'},
+			{'wool:yellow', 'infrastructure:asphalt', 'infrastructure:asphalt'}
 		}
 	})
+
 
 -- Asphalt block with center solid double line
 	minetest.register_craft({
