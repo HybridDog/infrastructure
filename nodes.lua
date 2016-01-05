@@ -200,41 +200,6 @@
 		}
 	})
 
--- Concrete sticks
-	minetest.register_node("infrastructure:precast_concrete_stick_vertical", {
-		description = "Precast concrete stick vertical",
-		tiles = {"infrastructure_concrete.png"},
-		drawtype = "nodebox",
-		paramtype = "light",
-		paramtype2 = "facedir",
-		groups = {cracky = 2},
-		node_box = {
-			type = "fixed",
-			fixed = {-1/8, -1/2, -1/8, 1/8, 1/2, 1/8}
-		},
-		selection_box = {
-			type = "fixed",
-			fixed = {-1/8, -1/2, -1/8, 1/8, 1/2, 1/8}
-		}
-	})
-
-	minetest.register_node("infrastructure:precast_concrete_stick_horizontal", {
-		description = "Precast concrete stick horizontal",
-		tiles = {"infrastructure_concrete.png"},
-		drawtype = "nodebox",
-		paramtype = "light",
-		paramtype2 = "facedir",
-		groups = {cracky = 2},
-		node_box = {
-			type = "fixed",
-			fixed = {-1/8, -1/8, -1/2, 1/8, 1/8, 1/2}
-		},
-		selection_box = {
-			type = "fixed",
-			fixed = {-1/8, -1/8, -1/2, 1/8, 1/8, 1/2}
-		}
-	})
-
 -- Concrete grid paver
 	minetest.register_node("infrastructure:precast_concrete_grid_paver", {
 		description = "Precast concrete grid paver",
