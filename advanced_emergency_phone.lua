@@ -35,22 +35,11 @@
 				}
 			},
 
-			after_place_node = function(pos)
-				local node = minetest.env:get_node(pos)
-				local param2 = node.param2
-					node.name = "infrastructure:emergency_phone_bottom"
-					minetest.env:add_node(pos, node)
-					node.name = "infrastructure:emergency_phone_top"
-					pos.y = pos.y+1
-					minetest.env:add_node(pos, node)
-			end,
-
 			after_dig_node = function(pos)
-				local node = minetest.env:get_node(pos)
-				local param2 = node.param2
-					node.name = "infrastructure:emergency_phone_bottom"
-					pos.y = pos.y-1
-					minetest.env:remove_node(pos)
+				pos.y = pos.y - 1
+				if minetest.get_node(pos).name == "infrastructure:emergency_phone_bottom" then
+					minetest.remove_node(pos)
+				end
 			end,
 
 			on_punch = function(pos, node, puncher)
@@ -74,9 +63,10 @@
 		minetest.register_node("infrastructure:emergency_phone_bottom", {
 			tiles = {"infrastructure_emergency_phone_bottom.png"},
 			drawtype = "nodebox",
+			drop = "streets:emergencyphone",
 			paramtype = "light",
 			paramtype2 = "facedir",
-			groups = {not_in_creative_inventory=1},
+			groups = {cracky=1,not_in_creative_inventory=1},
 			node_box = {
 				type = "fixed",
 				fixed = {-0.25, -0.5, -0.25, 0.25, 0.5, 0.25}
@@ -87,11 +77,10 @@
 			},
 
 			after_dig_node = function(pos)
-				local node = minetest.env:get_node(pos)
-				local param2 = node.param2
-					node.name = "infrastructure:emergency_phone_top"
-					pos.y = pos.y+1
-					minetest.env:remove_node(pos)
+				pos.y = pos.y+1
+				if minetest.get_node(pos).name == "infrastructure:emergency_phone_top" then
+					minetest.remove_node(pos)
+				end
 			end,
 		})
 
@@ -101,14 +90,16 @@
 			nodenames = {"streets:emergencyphone"},
 			interval = 1,
 			chance = 1,
-			action = function(pos, node, active_object_count, active_object_count_wider)
-				local node = minetest.env:get_node(pos)
-				local param2 = node.param2
+			action = function(pos, node)
+				local node = minetest.get_node(pos)
+				local node_above = minetest.get_node({x=pos.x,y=pos.y+1,z=pos.z})
+				if node_above.name == "air" then
 					node.name = "infrastructure:emergency_phone_bottom"
-					minetest.env:add_node(pos, node)
-					node.name = "infrastructure:emergency_phone_top"
+					minetest.set_node(pos, node)
 					pos.y = pos.y+1
-					minetest.env:add_node(pos, node)
+				end
+				node.name = "infrastructure:emergency_phone_top"
+				minetest.set_node(pos, node)
 			end,
 		})
 	else
