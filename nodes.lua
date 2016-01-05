@@ -524,20 +524,20 @@
 
 -- Displacement
 	function displacement(pos, placer)
-		local displaced_node = minetest.env:get_node(pos)
+		local displaced_node = minetest.get_node(pos)
 		local fdir = minetest.dir_to_facedir(placer:get_look_dir())
 		pos.y = pos.y - 1
-		local node = minetest.env:get_node(pos)
+		local node = minetest.get_node(pos)
 
 		if ((string.find(node.name, "_three_quarter") ~= nil) or (string.find(node.name, "_displacement_1") ~= nil)) then
 			pos.y = pos.y + 1
-			minetest.env:add_node(pos, {name = displaced_node.name.."_displacement_1", param2 = fdir})
+			minetest.set_node(pos, {name = displaced_node.name.."_displacement_1", param2 = fdir})
 		elseif (((string.find(node.name, "slab_") ~= nil) and (string.find(node.name, "_quarter") == nil)) or (string.find(node.name, "_displacement_2") ~= nil)) then
 			pos.y = pos.y + 1
-			minetest.env:add_node(pos, {name = displaced_node.name.."_displacement_2", param2 = fdir})
+			minetest.set_node(pos, {name = displaced_node.name.."_displacement_2", param2 = fdir})
 		elseif (((string.find(node.name, "_quarter") ~= nil) and (string.find(node.name, "_three_quarter") == nil)) or (string.find(node.name, "_displacement_3") ~= nil)) then
 			pos.y = pos.y + 1
-			minetest.env:add_node(pos, {name = displaced_node.name.."_displacement_3", param2 = fdir})
+			minetest.set_node(pos, {name = displaced_node.name.."_displacement_3", param2 = fdir})
 		end
 	end
 
