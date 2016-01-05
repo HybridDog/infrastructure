@@ -22,7 +22,7 @@
 				"streets_asphalt.png"
 			},
 			"Asphalt with center solid line",
-			"asphalt_center_solid",
+			"asphalt_center_solid_line",
 			0)
 
 -- Asphalt stair, slab, panel and microblock with center solid line on one side
@@ -37,7 +37,7 @@
 				"streets_asphalt.png"
 			},
 			"Asphalt with center solid line on one side",
-			"asphalt_center_solid_dashed",
+			"asphalt_center_solid_one_side",
 			0)
 
 -- Asphalt stair, slab, panel and microblock with center solid double line
