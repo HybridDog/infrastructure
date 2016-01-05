@@ -11,7 +11,7 @@
 -- **************************************************************************************************** CENTER LINES
 
 -- Asphalt stair, slab, panel and microblock with center solid line
-	register_stair_slab_panel_micro("infrastructure", "asphalt_center_solid", "infrastructure:asphalt_center_solid",
+	register_stair_slab_panel_micro("infrastructure", "asphalt_center_solid_line", "infrastructure:asphalt_center_solid_line",
 			{not_in_creative_inventory=NOT_IN_CREATIVE_INVENTORY, cracky=1},
 			{
 				"streets_asphalt.png^infrastructure_single_yellow_line.png",
