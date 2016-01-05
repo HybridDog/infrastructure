@@ -294,7 +294,7 @@
 		drawtype = "nodebox",
 		paramtype = "light",
 		paramtype2 = "facedir",
-		groups = {cracky = 2},
+		groups = {cracky = 2,not_in_creative_inventory = 1},
 		drop = "infrastructure:precast_concrete_grid_paver",
 		node_box = {
 			type = "fixed",

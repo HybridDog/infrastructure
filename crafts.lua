@@ -222,10 +222,20 @@
 
 -- Corrugated sheet
 	minetest.register_craft({
-		output = '"infrastructure:riffled_sheet" 4',
+		output = '"infrastructure:corrugated_sheet" 4',
 		recipe = {
-			{'infrastructure:galvanized_steel', 'infrastructure:fence_galvanized_steel'},
-			{'infrastructure:galvanized_steel', 'infrastructure:fence_galvanized_steel'}
+			{"","infrastructure:galvanized_steel",""},
+			{"infrastructure:galvanized_steel","","infrastructure:galvanized_steel"}
+		}
+	})
+
+-- Louvers
+	minetest.register_craft({
+		output = "infrastructure:louver_opened",
+		recipe = {
+			{"infrastructure:fence_galvanized_steel","infrastructure:galvanized_steel","infrastructure:fence_galvanized_steel"},
+			{"","",""},
+			{"infrastructure:fence_galvanized_steel","infrastructure:galvanized_steel","infrastructure:fence_galvanized_steel"}
 		}
 	})
 
@@ -371,16 +381,6 @@ end
 		}
 	})
 
--- Traffic lights for vehicles
-	minetest.register_craft({
-		output = '"infrastructure:traffic_lights_vehicles" 1',
-		recipe = {
-			{'default:steel_ingot', 'wool:red', 'default:steel_ingot'},
-			{'default:steel_ingot', 'wool:yellow', 'default:steel_ingot'},
-			{'default:steel_ingot', 'wool:green', 'default:steel_ingot'}
-		}
-	})
-
 -- Traffic lights for pedestrians
 	minetest.register_craft({
 		output = '"infrastructure:traffic_lights_pedestrians" 1',
@@ -398,16 +398,6 @@ end
 			{'', 'default:steel_ingot', ''},
 			{'default:steel_ingot', 'wool:yellow', 'default:steel_ingot'},
 			{'', 'wool:green', ''}
-		}
-	})
-
--- Lane control lights
-	minetest.register_craft({
-		output = '"infrastructure:lane_control_lights" 1',
-		recipe = {
-			{'wool:red', '', 'wool:red'},
-			{'wool:green', 'wool:red', 'wool:green'},
-			{'wool:red', 'wool:green', 'wool:red'}
 		}
 	})
 
@@ -448,6 +438,36 @@ end
 			{'wool:green', 'wool:green', 'wool:green'},
 			{'wool:green', 'wool:blue', 'wool:green'},
 			{'wool:green', 'wool:green', 'wool:green'}
+		}
+	})
+
+-- Road sign right_of_way
+	minetest.register_craft({
+		output = '"infrastructure:road_sign_right_of_way" 1',
+		recipe = {
+			{"", 'wool:white', ""},
+			{'wool:white', 'wool:yellow', 'wool:white'},
+			{"", 'wool:white', ""}
+		}
+	})
+
+-- Road sign stop
+	minetest.register_craft({
+		output = '"infrastructure:road_sign_stop" 1',
+		recipe = {
+			{'wool:red', 'wool:red', 'wool:red'},
+			{'wool:red', 'wool:white', 'wool:red'},
+			{'wool:red', 'wool:red', 'wool:red'}
+		}
+	})
+
+-- Road sign yield
+	minetest.register_craft({
+		output = '"infrastructure:road_sign_yield" 1',
+		recipe = {
+			{'wool:orange', 'wool:orange', 'wool:orange'},
+			{'wool:red', 'wool:orange', 'wool:red'},
+			{'', 'wool:red', ''}
 		}
 	})
 
